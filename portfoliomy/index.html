@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nadira Syafiqa | Full Stack Developer & Tech Enthusiast</title>
+  <meta name="description" content="Portfolio of Nadirah — Full Stack Developer, tech enthusiast, and community leader passionate about building impactful digital experiences."/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Particle Canvas -->
+  <canvas id="particles"></canvas>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-brand">
+      <span class="brand-icon">✦</span>
+      <span>nadira<span class="accent">.</span>dev</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact" class="btn-nav">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-left">
+        <p class="hero-greeting"><span class="wave">👋</span> Hello, I'm</p>
+        <h1 class="hero-name">Nadira Syafiqa<br/><span class="gradient-text">Sacdan</span></h1>
+        <div class="typed-wrapper">
+          <span id="typed-text"></span><span class="cursor">|</span>
+        </div>
+        <p class="hero-desc">A passionate Full Stack Developer & tech enthusiast building beautiful, impactful digital experiences. Turning ideas into elegant solutions, one line of code at a time. 💜</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary">Get In Touch</a>
+          <a href="#experience" class="btn-secondary">View My Work</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/nadirasyafiqa" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/nadirasacdan" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/nadirasyafiqa/?hl=en" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="profile-glow-ring">
+          <div class="profile-img-wrap">
+            <img src="assets/profile2.jpeg" alt="Nadirah's profile photo" id="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Nadirah+Nur+Aisyah&background=7c3aed&color=fff&size=400'"/>
+            <label class="upload-label" for="profile-upload" title="Click to upload your photo">
+              <i class="fas fa-camera"></i>
+            </label>
+            <input type="file" id="profile-upload" accept="image/*" style="display:none"/>
+          </div>
+        </div>
+        <div class="floating-badge badge-1"><i class="fas fa-code"></i> Full Stack Dev</div>
+        <div class="floating-badge badge-2"><i class="fas fa-star"></i> Dean's List</div>
+        <div class="floating-badge badge-3"><i class="fas fa-users"></i> Web Developer</div>
+      </div>
+    </div>
+    <div class="scroll-hint"><i class="fas fa-chevron-down"></i></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">01 — About Me</span>
+        <h2>Who Am <span class="gradient-text">I?</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text glass-card">
+            <p>
+              Hi! I'm <strong>Nadira Syafiqa</strong>, a recent graduate from Universiti Tun Hussein Onn Malaysia with a Bachelor of Computer Science (Web Technology) with Honours.
+            </p>
+
+            <p>
+              A motivated and detail-oriented Computer Science graduate with a strong foundation in web development, software engineering, and system design. Skilled in problem-solving and passionate about building efficient, scalable, and user-friendly applications.
+            </p>
+
+            <p>
+              Experienced in academic and internship projects involving modern web technologies and development tools. Demonstrates the ability to adapt quickly, write clean and maintainable code, and work effectively in a team-based development environment.
+            </p>
+
+            <p>
+              Eager to contribute to real-world software solutions while continuously improving technical skills and growing within a dynamic and innovative tech organization.
+            </p>          
+            <div class="about-highlights">
+            <div class="highlight-item">
+              <span class="highlight-num gradient-text">1+</span>
+              <span class="highlight-label">Years Experince</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-num gradient-text">5</span>
+              <span class="highlight-label">Projects Done</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-num gradient-text">1</span>
+              <span class="highlight-label">Awards Won</span>
+            </div>
+          </div>
+        </div>
+        <div class="skills-col">
+          <div class="glass-card skills-card">
+            <h3>Tech Stack</h3>
+
+            <p class="stack-label"><i class="fas fa-code"></i> Languages</p>
+            <div class="skill-tags">
+              <span class="tag tag-lang">HTML5</span>
+              <span class="tag tag-lang">CSS3</span>
+              <span class="tag tag-lang">JavaScript</span>
+              <span class="tag tag-lang">PHP</span>
+              <span class="tag tag-lang">Python</span>
+              <span class="tag tag-lang">C++</span>
+              <span class="tag tag-lang">C#</span>
+              <span class="tag tag-lang">Java</span>
+              <span class="tag tag-lang">Ruby</span>
+              <span class="tag tag-lang">Dart</span>
+              <span class="tag tag-lang">SQL</span>
+            </div>
+
+            <p class="stack-label"><i class="fas fa-layer-group"></i> Frameworks &amp; Libraries</p>
+            <div class="skill-tags">
+              <span class="tag tag-framework">React.js</span>
+              <span class="tag tag-framework">Springboot</span>
+              <span class="tag tag-framework">Ruby on Rails</span>
+              <span class="tag tag-framework">Laravel</span>
+              <span class="tag tag-framework">Flutter</span>
+              <span class="tag tag-framework">Bootstrap</span>
+            </div>
+
+            <p class="stack-label"><i class="fas fa-tools"></i> Tools &amp; Technologies</p>
+            <div class="skill-tags">
+              <span class="tag tag-tool">MySQL</span>
+              <span class="tag tag-tool">GitHub</span>
+              <span class="tag tag-tool">Figma</span>
+              <span class="tag tag-tool">VS Code</span>
+              <span class="tag tag-tool">Antigravity</span>
+              <span class="tag tag-tool">IntelliJ IDEA</span>
+            </div>
+          </div>
+          <div class="glass-card skills-card">
+            <h3>Soft Skills</h3>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <span>Leadership</span>
+                <div class="bar"><div class="bar-fill" data-w="92"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <span>Communication</span>
+                <div class="bar"><div class="bar-fill" data-w="88"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <span>Problem Solving</span>
+                <div class="bar"><div class="bar-fill" data-w="95"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <span>Teamwork</span>
+                <div class="bar"><div class="bar-fill" data-w="90"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">02 — Education</span>
+        <h2>Academic <span class="gradient-text">Background</span></h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item" data-aos>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="tl-header">
+              <div>
+                <h3>Bachelor of Computer Science (Web Technology) with Honours</h3>
+                <p class="tl-place"><i class="fas fa-university"></i> Universiti Tun Hussein Onn Malaysia (UTHM)</p>
+              </div>
+              <span class="tl-year">2022 – 2026</span>
+            </div>
+            <p>Specializing in Web Technology and programming with a CGPA of <strong>3.43</strong>. Consistent Dean's List recipient for 3 semesters. Active in research on Human-Computer Interaction and Agile methodologies.</p>
+            <div class="tl-tags">
+              <span class="tag-sm">Dean's List</span>
+              <span class="tag-sm">Software Programming</span>
+              <span class="tag-sm">Web Technology</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="tl-header">
+              <div>
+                <h3>Computer Science Module </h3>
+                <p class="tl-place"><i class="fas fa-school"></i> Pahang Matricualtion College</p>
+              </div>
+              <span class="tl-year">2021 – 2022</span>
+            </div>
+            <p>Completed matriculation studies with a GPA of <strong>3.33</strong>. Pre-university programme where students are prepared for IT-related degrees at university.</p>
+            <div class="tl-tags">
+              <span class="tag-sm">Java Programming</span>
+              <span class="tag-sm">Fundamental of Programming</span>
+              <span class="tag-sm">Fundamental of Database</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="tl-header">
+              <div>
+                <h3>Sijil Pelajaran Malaysia (SPM)</h3>
+                <p class="tl-place"><i class="fas fa-graduation-cap"></i> SMK Jengka Pusat</p>
+              </div>
+              <span class="tl-year">2016 – 2020</span>
+            </div>
+            <p>Active in the Sports, Pure Science Stream, and served as Head of the Library.</p>
+            <div class="tl-tags">
+              <span class="tag-sm">Pure Science Stream</span>
+              <span class="tag-sm">Mathematics</span>
+              <span class="tag-sm">Physics</span>
+              <span class="tag-sm">Chemistry</span>
+              <span class="tag-sm">Biology</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">03 — Experience</span>
+        <h2>Work <span class="gradient-text">Experience</span></h2>
+      </div>
+      <div class="exp-grid">
+        <div class="exp-card glass-card" data-aos>
+          <div class="exp-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="exp-body">
+            <span class="exp-period">August 2025 – January 2026</span>
+            <h3>PHP Developer Intern</h3>
+            <p class="exp-company"><i class="fas fa-building"></i> Webby Group, Puchong, Selangor</p>
+            <ul>
+              <li>Engineered a multi-tenant database architecture using PHP (Laravel),enabling the platform to support multiple clients on a single instance while reducing infrastructure costs.</li>
+              <li>Designed and implemented GraphQL APIs for mobile applications, optimizing data retrieval and improving mobile response times.</li>
+              <li>Led debugging and quality testing efforts for backend services, ensuring high system reliability and seamless server deployments. </li>
+              <li>Collaborated with cross-functional teams to integrate complex APIs, consistently delivering high-performance features under tight deadlines. </li>
+              <li>Authored comprehensive technical documentation, ensuring seamless knowledge transfer and reducing developer onboarding time.  </li>
+            </ul>
+            <div class="tl-tags">
+              <span class="tag-sm">Laravel</span><span class="tag-sm">GraphQL</span><span class="tag-sm">MySQL</span><span class="tag-sm">REST API</span>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="exp-card glass-card" data-aos>
+          <div class="exp-icon"><i class="fas fa-paint-brush"></i></div>
+          <div class="exp-body">
+            <span class="exp-period">Jan 2024 – May 2024</span>
+            <h3>UI/UX Design Consultant (Part-Time)</h3>
+            <p class="exp-company"><i class="fas fa-building"></i> Freelance — Remote</p>
+            <ul>
+              <li>Designed user interfaces for 4 client mobile applications using Figma, with user testing and prototyping.</li>
+              <li>Conducted usability research interviews with 30+ users to improve UX flows.</li>
+              <li>Delivered pixel-perfect design handoffs to development teams, reducing revision cycles by 50%.</li>
+            </ul>
+            <div class="tl-tags">
+              <span class="tag-sm">Figma</span><span class="tag-sm">UX Research</span><span class="tag-sm">Prototyping</span>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="exp-card glass-card" data-aos>
+          <div class="exp-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <div class="exp-body">
+            <span class="exp-period">Sep 2023 – Dec 2023</span>
+            <h3>Teaching Assistant — Web Technologies</h3>
+            <p class="exp-company"><i class="fas fa-university"></i> Universiti Teknologi Malaysia</p>
+            <ul>
+              <li>Assisted in teaching HTML, CSS, and JavaScript to 60+ first-year students.</li>
+              <li>Conducted weekly lab sessions and provided code reviews for assignments.</li>
+              <li>Achieved 96% student satisfaction score in end-of-semester evaluations.</li>
+            </ul>
+            <div class="tl-tags">
+              <span class="tag-sm">Teaching</span><span class="tag-sm">HTML/CSS</span><span class="tag-sm">JavaScript</span>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section id="awards" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">04 — Awards & Achievements</span>
+        <h2>Awards <span class="gradient-text">& Achievements</span></h2>
+      </div>
+      <!-- <div class="lead-grid">
+        <div class="lead-card glass-card" data-aos>
+          <div class="lead-icon-wrap"><i class="fas fa-crown"></i></div>
+          <h3>Vice President</h3>
+          <p class="lead-org">Enterprenuership Club </p>
+          <span class="lead-period">2022 – 2023</span>
+          <p>Led a team of 30 members to plan and execute club activities throughout the semester. Achieved 100% of semester sales target (30 cups/week) through product commercialization. Coordinated 20 members to ensure effective task delegation and on-time execution of activities.</p>
+        </div>
+        <div class="lead-card glass-card" data-aos>
+          <div class="lead-icon-wrap"><i class="fas fa-laptop"></i></div>
+          <h3>Technical Director</h3>
+          <p class="lead-org">UTM HackFest 2023</p>
+          <span class="lead-period">Mar 2023</span>
+          <p>Directed technical operations for a 48-hour hackathon with 300+ participants from 20 universities. Managed judging criteria, problem statements, and technical infrastructure.</p>
+        </div>
+        <div class="lead-card glass-card" data-aos>
+          <div class="lead-icon-wrap"><i class="fas fa-hands-helping"></i></div>
+          <h3>Community Manager</h3>
+          <p class="lead-org">Google Developer Student Club UTM</p>
+          <span class="lead-period">2022 – 2023</span>
+          <p>Grew the GDSC chapter from 50 to 350+ members. Organized Google Solution Challenge participation and hosted monthly tech talks attracting industry speakers.</p>
+        </div>
+        <div class="lead-card glass-card" data-aos>
+          <div class="lead-icon-wrap"><i class="fas fa-trophy"></i></div>
+          <h3>Head Delegate</h3>
+          <p class="lead-org">Malaysian Youth Tech Parliament 2022</p>
+          <span class="lead-period">Aug 2022</span>
+          <p>Represented UTM as Head Delegate at the national youth parliament on digital governance. Proposed a policy paper on bridging the digital divide in rural Malaysia.</p>
+        </div>
+      </div> -->
+      <!-- Awards -->
+      <div class="awards-row">
+        <!-- <h3 class="awards-title">🏆 Awards & Achievements</h3> -->
+        <div class="awards-grid">
+          <div class="award-item glass-card"><i class="fas fa-medal"></i><span>Dean's List - Semester 1 Session 2023/2024 – GPA 3.65</span></div>
+          <div class="award-item glass-card"><i class="fas fa-medal"></i><span>Dean's List - Semester 1 Session 2024/2025 – GPA 3.56   </span></div>
+          <div class="award-item glass-card"><i class="fas fa-medal"></i><span>Dean's List — Semester 2 Session 2025/2026 – GPA 3.77 </span></div>
+          <div class="award-item glass-card"><i class="fas fa-globe"></i><span>Silver Medal - International Undergraduate Innovation Competition 2025 (UTHM)</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">05 — Gallery</span>
+        <h2>Moments & <span class="gradient-text">Memories</span></h2>
+        <p class="section-subtitle">A glimpse into my journey — events, milestones, and meaningful moments.</p>
+      </div>
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Activity cards with upload support -->
+        <div class="gallery-card" data-aos>
+          <img src="assets/deanlist.jpeg" alt="Leadership at Hackathon" class="gallery-img" onerror="this.src='https://picsum.photos/seed/hack/600/400'"/>
+          <div class="gallery-overlay">
+            <span>Dean's List</span>
+            <label class="gallery-upload-btn" title="Change photo"><i class="fas fa-camera"></i><input type="file" accept="image/*" class="gallery-file-input"/></label>
+          </div>
+        </div>
+        <div class="gallery-card" data-aos>
+          <img src="assets/deanlist_friends.jpeg" alt="Community Workshop" class="gallery-img" onerror="this.src='https://picsum.photos/seed/women/600/400'"/>
+          <div class="gallery-overlay">
+            <span>Dean's List</span>
+            <label class="gallery-upload-btn" title="Change photo"><i class="fas fa-camera"></i><input type="file" accept="image/*" class="gallery-file-input"/></label>
+          </div>
+        </div>
+        <div class="gallery-card" data-aos>
+          <img src="assets/deanlist_nadira.jpeg" alt="Graduation Day" class="gallery-img" onerror="this.src='https://picsum.photos/seed/grad/600/400'"/>
+          <div class="gallery-overlay">
+            <span>Dean's List</span>
+            <label class="gallery-upload-btn" title="Change photo"><i class="fas fa-camera"></i><input type="file" accept="image/*" class="gallery-file-input"/></label>
+          </div>
+        </div>
+        <div class="gallery-card" data-aos>
+          <img src="assets/fyp.jpeg" alt="Graduation Day" class="gallery-img" onerror="this.src='https://picsum.photos/seed/grad/600/400'"/>
+          <div class="gallery-overlay">
+            <span>Final Year Project</span>
+            <label class="gallery-upload-btn" title="Change photo"><i class="fas fa-camera"></i><input type="file" accept="image/*" class="gallery-file-input"/></label>
+          </div>
+        </div>
+        <div class="gallery-card" data-aos>
+          <img src="assets/fyp_friends.jpeg" alt="Graduation Day" class="gallery-img" onerror="this.src='https://picsum.photos/seed/grad/600/400'"/>
+          <div class="gallery-overlay">
+            <span>Final Year Project</span>
+            <label class="gallery-upload-btn" title="Change photo"><i class="fas fa-camera"></i><input type="file" accept="image/*" class="gallery-file-input"/></label>
+          </div>
+        </div>
+        <div class="gallery-card" data-aos>
+          <img src="assets/presnetation_fyp.jpeg" alt="Graduation Day" class="gallery-img" onerror="this.src='https://picsum.photos/seed/grad/600/400'"/>
+          <div class="gallery-overlay">
+            <span>Final Year Project demonstration</span>
+            <label class="gallery-upload-btn" title="Change photo"><i class="fas fa-camera"></i><input type="file" accept="image/*" class="gallery-file-input"/></label>
+          </div>
+        </div>
+        <div class="gallery-card" data-aos>
+          <img src="assets/fyp1.jpeg" alt="Graduation Day" class="gallery-img" onerror="this.src='https://picsum.photos/seed/grad/600/400'"/>
+          <div class="gallery-overlay">
+            <span>Final Year Project</span>
+            <label class="gallery-upload-btn" title="Change photo"><i class="fas fa-camera"></i><input type="file" accept="image/*" class="gallery-file-input"/></label>
+          </div>
+        </div>
+        <div class="gallery-card" data-aos>
+          <img src="assets/internship_nadira.jpeg" alt="Graduation Day" class="gallery-img" onerror="this.src='https://picsum.photos/seed/grad/600/400'"/>
+          <div class="gallery-overlay">
+            <span>Internship Presentation</span>
+            <label class="gallery-upload-btn" title="Change photo"><i class="fas fa-camera"></i><input type="file" accept="image/*" class="gallery-file-input"/></label>
+          </div>
+        </div>
+        <div class="gallery-card" data-aos>
+          <img src="assets/webby_group_vacay.jpeg" alt="Graduation Day" class="gallery-img" onerror="this.src='https://picsum.photos/seed/grad/600/400'"/>
+          <div class="gallery-overlay">
+            <span>Webby's Event</span>
+            <label class="gallery-upload-btn" title="Change photo"><i class="fas fa-camera"></i><input type="file" accept="image/*" class="gallery-file-input"/></label>
+          </div>
+        </div>
+        <div class="gallery-card" data-aos>
+          <img src="assets/nadira_silvermedal.jpeg" alt="Graduation Day" class="gallery-img" onerror="this.src='https://picsum.photos/seed/grad/600/400'"/>
+          <div class="gallery-overlay">
+            <span>Silver Medal IUIC</span>
+            <label class="gallery-upload-btn" title="Change photo"><i class="fas fa-camera"></i><input type="file" accept="image/*" class="gallery-file-input"/></label>
+          </div>
+        </div>
+        <div class="gallery-card" data-aos>
+          <img src="assets/silvermedal.jpeg" alt="Graduation Day" class="gallery-img" onerror="this.src='https://picsum.photos/seed/grad/600/400'"/>
+          <div class="gallery-overlay">
+            <span>Silver Medal IUIC</span>
+            <label class="gallery-upload-btn" title="Change photo"><i class="fas fa-camera"></i><input type="file" accept="image/*" class="gallery-file-input"/></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">06 — Contact</span>
+        <h2>Let's <span class="gradient-text">Connect</span></h2>
+        <p class="section-subtitle">Have an opportunity, please contact me 💌</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info glass-card">
+          <h3>Get In Touch</h3>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+              <div><p class="ci-label">Email</p><a href="mailto:nadirasacdan10@gmail.com">nadirasacdan10@gmail.com</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon"><i class="fas fa-phone"></i></div>
+              <div><p class="ci-label">Phone</p><a href="tel:+60199302852">+60 19-9302852</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div><p class="ci-label">Location</p><span>Kuala Lumpur, Malaysia</span></div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon"><i class="fab fa-linkedin-in"></i></div>
+              <div><p class="ci-label">LinkedIn</p><a href="www.linkedin.com/in/nadirasacdan">linkedin.com/in/nadirasacdan</a></div>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://github.com/nadirasyafiqa" class="social-pill"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.instagram.com/nadirasyafiqa/?hl=en" class="social-pill"><i class="fab fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+        <form class="contact-form glass-card" id="contact-form">
+          <h3>Send a Message</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-name">Your Name</label>
+              <input type="text" id="cf-name" placeholder="e.g. Aisha" required/>
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Email Address</label>
+              <input type="email" id="cf-email" placeholder="you@email.com" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cf-subject">Subject</label>
+            <input type="text" id="cf-subject" placeholder="Collaboration / Opportunity / Just Saying Hi!"/>
+          </div>
+          <div class="form-group">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" rows="5" placeholder="Tell me more about what you have in mind..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full" id="send-btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+          <p class="form-success" id="form-success" style="display:none">✅ Message sent! I'll get back to you soon. 💜</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-brand">nadirasyafiqa<span class="accent">.</span>dev</p>
+      <p>Crafted with 💜 by nadirasyafiqa &nbsp;|&nbsp; © 2025 All Rights Reserved</p>
+      <p class="footer-quote">"Code is poetry. Build things that matter." ✨</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
