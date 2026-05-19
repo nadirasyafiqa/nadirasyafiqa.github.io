@@ -448,7 +448,7 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="section section-alt">
+<section id="contact" class="section section-alt">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">06 — Contact</span>
@@ -473,7 +473,7 @@
             </div>
             <div class="contact-item">
               <div class="ci-icon"><i class="fab fa-linkedin-in"></i></div>
-              <div><p class="ci-label">LinkedIn</p><a href="www.linkedin.com/in/nadirasacdan">linkedin.com/in/nadirasacdan</a></div>
+              <div><p class="ci-label">LinkedIn</p><a href="https://www.linkedin.com/in/nadirasacdan">linkedin.com/in/nadirasacdan</a></div>
             </div>
           </div>
           <div class="contact-socials">
@@ -481,25 +481,25 @@
             <a href="https://www.instagram.com/nadirasyafiqa/?hl=en" class="social-pill"><i class="fab fa-instagram"></i> Instagram</a>
           </div>
         </div>
-        <form class="contact-form glass-card" id="contact-form">
+        <form class="contact-form glass-card" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
           <h3>Send a Message</h3>
           <div class="form-row">
             <div class="form-group">
               <label for="cf-name">Your Name</label>
-              <input type="text" id="cf-name" placeholder="e.g. Aisha" required/>
+              <input type="text" id="cf-name" name="name" placeholder="e.g. Aisha" required/>
             </div>
             <div class="form-group">
               <label for="cf-email">Email Address</label>
-              <input type="email" id="cf-email" placeholder="you@email.com" required/>
+              <input type="email" id="cf-email" name="email" placeholder="you@email.com" required/>
             </div>
           </div>
           <div class="form-group">
             <label for="cf-subject">Subject</label>
-            <input type="text" id="cf-subject" placeholder="Collaboration / Opportunity / Just Saying Hi!"/>
+            <input type="text" id="cf-subject" name="subject" placeholder="Collaboration / Opportunity / Just Saying Hi!"/>
           </div>
           <div class="form-group">
             <label for="cf-message">Message</label>
-            <textarea id="cf-message" rows="5" placeholder="Tell me more about what you have in mind..." required></textarea>
+            <textarea id="cf-message" name="message" rows="5" placeholder="Tell me more about what you have in mind..." required></textarea>
           </div>
           <button type="submit" class="btn-primary btn-full" id="send-btn">
             <i class="fas fa-paper-plane"></i> Send Message
