@@ -140,52 +140,68 @@ const galleryAddInput = document.getElementById('gallery-add-input');
 const galleryGrid = document.getElementById('gallery-grid');
 const addCard = document.getElementById('add-photo-card');
 
-galleryAddInput.addEventListener('change', function () {
-  const files = Array.from(this.files);
-  files.forEach(file => {
-    const reader = new FileReader();
-    reader.onload = e => {
-      const card = document.createElement('div');
-      card.className = 'gallery-card';
-      card.innerHTML = `
-        <img src="${e.target.result}" alt="My photo" class="gallery-img"/>
-        <div class="gallery-overlay">
-          <span>My Memory ✨</span>
-          <label class="gallery-upload-btn" title="Change photo">
-            <i class="fas fa-camera"></i>
-            <input type="file" accept="image/*" class="gallery-file-input" style="display:none"/>
-          </label>
-        </div>`;
-      card.querySelector('.gallery-file-input').addEventListener('change', function () {
-        const f = this.files[0];
-        if (f) {
-          const r2 = new FileReader();
-          r2.onload = ev => { card.querySelector('.gallery-img').src = ev.target.result; };
-          r2.readAsDataURL(f);
-        }
-      });
-      galleryGrid.insertBefore(card, addCard);
-    };
-    reader.readAsDataURL(file);
+if (galleryAddInput && galleryGrid && addCard) {
+  galleryAddInput.addEventListener('change', function () {
+    const files = Array.from(this.files);
+    files.forEach(file => {
+      const reader = new FileReader();
+      reader.onload = e => {
+        const card = document.createElement('div');
+        card.className = 'gallery-card';
+        card.innerHTML = `
+          <img src="${e.target.result}" alt="My photo" class="gallery-img"/>
+          <div class="gallery-overlay">
+            <span>My Memory ✨</span>
+            <label class="gallery-upload-btn" title="Change photo">
+              <i class="fas fa-camera"></i>
+              <input type="file" accept="image/*" class="gallery-file-input" style="display:none"/>
+            </label>
+          </div>`;
+        card.querySelector('.gallery-file-input').addEventListener('change', function () {
+          const f = this.files[0];
+          if (f) {
+            const r2 = new FileReader();
+            r2.onload = ev => { card.querySelector('.gallery-img').src = ev.target.result; };
+            r2.readAsDataURL(f);
+          }
+        });
+        
+        card.addEventListener('click', (ev) => {
+          if (ev.target.closest('.gallery-upload-btn') || ev.target.closest('.gallery-file-input')) {
+            return;
+          }
+          const img = card.querySelector('.gallery-img');
+          const caption = card.querySelector('.gallery-overlay span');
+          if (img) {
+            openLightbox(img.src, caption ? caption.textContent : '');
+          }
+        });
+
+        galleryGrid.insertBefore(card, addCard);
+      };
+      reader.readAsDataURL(file);
+    });
+    this.value = '';
   });
-  this.value = '';
-});
+}
 
 // ===== CONTACT FORM =====
 const form = document.getElementById('contact-form');
 const sendBtn = document.getElementById('send-btn');
 const formSuccess = document.getElementById('form-success');
 
-form.addEventListener('submit', function (e) {
-  e.preventDefault();
-  sendBtn.disabled = true;
-  sendBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-  setTimeout(() => {
-    sendBtn.style.display = 'none';
-    formSuccess.style.display = 'block';
-    form.reset();
-  }, 1800);
-});
+if (form) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    sendBtn.disabled = true;
+    sendBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    setTimeout(() => {
+      sendBtn.style.display = 'none';
+      formSuccess.style.display = 'block';
+      form.reset();
+    }, 1800);
+  });
+}
 
 // ===== ACTIVE NAV HIGHLIGHT =====
 const sections = document.querySelectorAll('section[id]');
@@ -197,5 +213,81 @@ window.addEventListener('scroll', () => {
   });
   navAnchors.forEach(a => {
     a.style.color = a.getAttribute('href') === '#' + current ? 'var(--white)' : '';
+  });
+});
+
+// ===== LIGHTBOX MODAL =====
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+const lightboxClose = document.querySelector('.lightbox-close');
+
+function openLightbox(src, captionText) {
+  if (!lightbox || !lightboxImg) return;
+  lightboxImg.src = src;
+  if (lightboxCaption) {
+    lightboxCaption.textContent = captionText || '';
+    lightboxCaption.style.display = captionText ? 'block' : 'none';
+  }
+  lightbox.style.display = 'flex';
+  void lightbox.offsetWidth; // trigger reflow
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  if (!lightbox) return;
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+  setTimeout(() => {
+    if (!lightbox.classList.contains('active')) {
+      lightbox.style.display = 'none';
+    }
+  }, 300);
+}
+
+if (lightboxClose) {
+  lightboxClose.addEventListener('click', closeLightbox);
+}
+
+if (lightbox) {
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content-wrap')) {
+      closeLightbox();
+    }
+  });
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && lightbox && lightbox.classList.contains('active')) {
+    closeLightbox();
+  }
+});
+
+// Setup click listeners for certificate links that point to images
+document.querySelectorAll('.cert-link').forEach(link => {
+  const href = link.getAttribute('href');
+  if (href && href.match(/\.(jpeg|jpg|gif|png|webp)/i)) {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const certCard = link.closest('.cert-card');
+      const titleEl = certCard ? certCard.querySelector('.cert-title') : null;
+      const title = titleEl ? titleEl.textContent.trim().replace(/\s+/g, ' ') : 'Certificate';
+      openLightbox(href, title);
+    });
+  }
+});
+
+// Setup click listeners for gallery cards
+document.querySelectorAll('.gallery-card').forEach(card => {
+  card.addEventListener('click', (e) => {
+    if (e.target.closest('.gallery-upload-btn') || e.target.closest('.gallery-file-input')) {
+      return;
+    }
+    const img = card.querySelector('.gallery-img');
+    const captionEl = card.querySelector('.gallery-overlay span');
+    if (img) {
+      openLightbox(img.getAttribute('src'), captionEl ? captionEl.textContent.trim() : '');
+    }
   });
 });
